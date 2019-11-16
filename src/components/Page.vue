@@ -1,5 +1,10 @@
 <template>
-  <div @click="sendKind('page')">
+  <div
+    @click="sendKind('page')"
+    @mouseover="isHovering = true"
+    @mouseout="isHovering = false"
+    :class="{'s-component': isHovering}"
+  >
     <custom-styles>{{styleObject.ddd.value}}</custom-styles>
     <div class="test" :style="styleObject.gridPage">
       <div :class="nameObject.d123" :style="styleObject.flexboxHeader">
@@ -97,6 +102,10 @@ export default {
             .header > div:nth-child(3) {
                 margin-left: auto;
             }
+
+            .s-component{
+              border: 2px solid #d00fe7;
+              }
         `
         }
       }

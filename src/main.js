@@ -4,10 +4,12 @@ import VueRouter from "vue-router";
 
 import Foo from "@/components/plugin/Foo";
 import Bar from "@/components/plugin/Bar";
+import PageContainer from "@/components/PageContainer";
 
 Vue.use(VueRouter);
 
 const routes = [
+  { path: "/", component: PageContainer },
   { path: "/foo", component: Foo },
   { path: "/bar", component: Bar }
 ];

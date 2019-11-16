@@ -8,10 +8,19 @@
 
 export const componentSelectorMixin = {
   inject: ["selectedComponentType"],
+
+  data() {
+    return {
+      isHovering: false
+    };
+  },
   methods: {
     sendKind(kind) {
       console.log("sendKind");
       this.selectedComponentType(kind);
+    },
+    showBorder(ev) {
+      console.log("ev :", ev.target);
     }
   }
 };

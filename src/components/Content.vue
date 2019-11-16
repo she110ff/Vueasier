@@ -1,8 +1,13 @@
 
 <template>
-  <div @click.stop="sendKind('content')" :style="styleObject.gridPage">
+  <div
+    @click.stop="sendKind('content')"
+    @mouseover.stop="isHovering = true"
+    @mouseout="isHovering = false"
+    :class="{'s-component': isHovering}"
+    :style="styleObject.gridPage"
+  >
     <div v-for="(row, index) in rows" :key="(row.name + index)" :style="styleObject.flexRow">
-      <div>{{row.name}}</div>
       <div>{{row.name}}</div>
     </div>
     <div @click="addRow">addRow</div>

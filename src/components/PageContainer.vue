@@ -16,6 +16,8 @@
 
 <script>
 import Page from "@/components/Page";
+//import LayoutDefault from "@/layout/LayoutDefault.vue";
+
 export default {
   provide: function() {
     return {
@@ -29,6 +31,10 @@ export default {
     selectedComponentType(kind) {
       console.log("selectedComponentType > kind :", kind);
     }
+  },
+  created() {
+    console.log("created");
+    this.$emit("update:layout", () => import("@/layout/LayoutDefault.vue"));
   }
 };
 </script>
